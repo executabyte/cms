@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+                 package collection;
+service CollectionService {
+ rpc createCollection (CollectionCreateInput) returns (Collection) {}
+rpc collections (findManyParams) returns (stream Collection) {}
+rpc collection (CollectionWhereUniqueInput) returns (Collection) {}
+rpc updateCollection (CollectionUpdateInput) returns (Collection) {}
+rpc deleteCollection (CollectionWhereUniqueInput) returns (Collection) {}
+rpc findManyCollection (CollectionWhereUniqueInput) returns (stream Record) {}
+rpc updateCollection (RecordParams) returns (stream Record) {}
+rpc connectCollection (RecordParams) returns (Record) {}
+rpc disconnectCollection (RecordParams) returns (Record) {} 
+ }
+message CollectionCreateInput {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+repeated Record records = 4;
+string slug = 5;
+string structure = 6;
+string updatedAt = 7;
+};
+message Collection {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+repeated Record records = 4;
+string slug = 5;
+string structure = 6;
+string updatedAt = 7;
+};
+message CollectionWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+repeated Record records = 4;
+string slug = 5;
+string structure = 6;
+string updatedAt = 7;
+};
+message CollectionUpdateInput {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+repeated Record records = 4;
+string slug = 5;
+string structure = 6;
+string updatedAt = 7;
+};
+message findManyParams {
+
+};
+message Record {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string updatedAt = 4;
+};
+message RecordWhereUniqueInput {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string updatedAt = 4;
+};
+message RecordParams {
+CollectionWhereUniqueInput collectionWhereUniqueInput = 1;
+RecordWhereUniqueInput recordWhereUniqueInput = 2;
+};

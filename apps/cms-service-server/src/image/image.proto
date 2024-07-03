@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+                 package image;
+service ImageService {
+ rpc createImage (ImageCreateInput) returns (Image) {}
+rpc images (findManyParams) returns (stream Image) {}
+rpc image (ImageWhereUniqueInput) returns (Image) {}
+rpc updateImage (ImageUpdateInput) returns (Image) {}
+rpc deleteImage (ImageWhereUniqueInput) returns (Image) {} 
+ }
+message ImageCreateInput {
+string createdAt = 1;
+string filename = 2;
+string id = 3;
+string mimetype = 4;
+string path = 5;
+int32 size = 6;
+string updatedAt = 7;
+string url = 8;
+};
+message Image {
+string createdAt = 1;
+string filename = 2;
+string id = 3;
+string mimetype = 4;
+string path = 5;
+int32 size = 6;
+string updatedAt = 7;
+string url = 8;
+};
+message ImageWhereUniqueInput {
+string createdAt = 1;
+string filename = 2;
+string id = 3;
+string mimetype = 4;
+string path = 5;
+int32 size = 6;
+string updatedAt = 7;
+string url = 8;
+};
+message ImageUpdateInput {
+string createdAt = 1;
+string filename = 2;
+string id = 3;
+string mimetype = 4;
+string path = 5;
+int32 size = 6;
+string updatedAt = 7;
+string url = 8;
+};
+message findManyParams {
+
+};
