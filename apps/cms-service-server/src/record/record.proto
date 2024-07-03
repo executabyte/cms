@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+                 package record;
+service RecordService {
+ rpc createRecord (RecordCreateInput) returns (Record) {}
+rpc records (findManyParams) returns (stream Record) {}
+rpc record (RecordWhereUniqueInput) returns (Record) {}
+rpc updateRecord (RecordUpdateInput) returns (Record) {}
+rpc deleteRecord (RecordWhereUniqueInput) returns (Record) {} 
+ }
+message RecordCreateInput {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string updatedAt = 4;
+};
+message Record {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string updatedAt = 4;
+};
+message RecordWhereUniqueInput {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string updatedAt = 4;
+};
+message RecordUpdateInput {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string updatedAt = 4;
+};
+message findManyParams {
+
+};

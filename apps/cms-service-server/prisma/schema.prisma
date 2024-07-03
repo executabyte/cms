@@ -1,0 +1,55 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Collection {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String?
+  records   Record[]
+  slug      String?
+  structure Json?
+  updatedAt DateTime @updatedAt
+}
+
+model Record {
+  collection   Collection? @relation(fields: [collectionId], references: [id])
+  collectionId String?     @db.ObjectId
+  createdAt    DateTime    @default(now())
+  data         Json?
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt    DateTime    @updatedAt
+}
+
+model User {
+  createdAt DateTime      @default(now())
+  email     String?       @unique
+  firstName String?
+  id        String        @id @default(auto()) @map("_id") @db.ObjectId
+  lastName  String?
+  password  String
+  role      EnumUserRole?
+  roles     Json
+  updatedAt DateTime      @updatedAt
+  username  String        @unique
+}
+
+model Image {
+  createdAt DateTime @default(now())
+  filename  String?
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  mimetype  String?
+  path      String?
+  size      Int?
+  updatedAt DateTime @updatedAt
+  url       String?
+}
+
+enum EnumUserRole {
+  Option1
+}
