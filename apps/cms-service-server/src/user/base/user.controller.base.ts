@@ -39,10 +39,10 @@ export class UserControllerBase {
         firstName: true,
         id: true,
         lastName: true,
-        role: true,
         roles: true,
         updatedAt: true,
         username: true,
+        userRoles: true,
       },
     });
   }
@@ -60,10 +60,10 @@ export class UserControllerBase {
         firstName: true,
         id: true,
         lastName: true,
-        role: true,
         roles: true,
         updatedAt: true,
         username: true,
+        userRoles: true,
       },
     });
   }
@@ -82,10 +82,10 @@ export class UserControllerBase {
         firstName: true,
         id: true,
         lastName: true,
-        role: true,
         roles: true,
         updatedAt: true,
         username: true,
+        userRoles: true,
       },
     });
     if (result === null) {
@@ -116,10 +116,10 @@ export class UserControllerBase {
           firstName: true,
           id: true,
           lastName: true,
-          role: true,
           roles: true,
           updatedAt: true,
           username: true,
+          userRoles: true,
         },
       });
     } catch (error) {
@@ -147,10 +147,10 @@ export class UserControllerBase {
           firstName: true,
           id: true,
           lastName: true,
-          role: true,
           roles: true,
           updatedAt: true,
           username: true,
+          userRoles: true,
         },
       });
     } catch (error) {

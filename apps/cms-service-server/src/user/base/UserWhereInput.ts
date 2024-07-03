@@ -15,7 +15,7 @@ import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
 import { IsOptional, IsEnum } from "class-validator";
 import { StringFilter } from "../../util/StringFilter";
-import { EnumUserRole } from "./EnumUserRole";
+import { EnumUserUserRoles } from "./EnumUserUserRoles";
 
 @InputType()
 class UserWhereInput {
@@ -65,17 +65,6 @@ class UserWhereInput {
 
   @ApiProperty({
     required: false,
-    enum: EnumUserRole,
-  })
-  @IsEnum(EnumUserRole)
-  @IsOptional()
-  @Field(() => EnumUserRole, {
-    nullable: true,
-  })
-  role?: "Option1";
-
-  @ApiProperty({
-    required: false,
     type: StringFilter,
   })
   @Type(() => StringFilter)
@@ -84,6 +73,17 @@ class UserWhereInput {
     nullable: true,
   })
   username?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumUserUserRoles,
+  })
+  @IsEnum(EnumUserUserRoles)
+  @IsOptional()
+  @Field(() => EnumUserUserRoles, {
+    nullable: true,
+  })
+  userRoles?: "Option1";
 }
 
 export { UserWhereInput as UserWhereInput };
