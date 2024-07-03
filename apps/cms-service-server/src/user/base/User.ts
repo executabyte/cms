@@ -19,10 +19,10 @@ import {
   IsEnum,
 } from "class-validator";
 import { Type } from "class-transformer";
-import { EnumUserRole } from "./EnumUserRole";
 import { IsJSONValue } from "../../validators";
 import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
+import { EnumUserUserRoles } from "./EnumUserUserRoles";
 
 @ObjectType()
 class User {
@@ -78,17 +78,6 @@ class User {
   lastName!: string | null;
 
   @ApiProperty({
-    required: false,
-    enum: EnumUserRole,
-  })
-  @IsEnum(EnumUserRole)
-  @IsOptional()
-  @Field(() => EnumUserRole, {
-    nullable: true,
-  })
-  role?: "Option1" | null;
-
-  @ApiProperty({
     required: true,
   })
   @IsJSONValue()
@@ -110,6 +99,17 @@ class User {
   @IsString()
   @Field(() => String)
   username!: string;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumUserUserRoles,
+  })
+  @IsEnum(EnumUserUserRoles)
+  @IsOptional()
+  @Field(() => EnumUserUserRoles, {
+    nullable: true,
+  })
+  userRoles?: "Option1" | null;
 }
 
 export { User as User };

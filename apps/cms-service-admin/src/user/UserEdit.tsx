@@ -6,8 +6,8 @@ import {
   EditProps,
   TextInput,
   PasswordInput,
-  SelectInput,
   SelectArrayInput,
+  SelectInput,
 } from "react-admin";
 
 import { ROLES_OPTIONS } from "../user/RolesOptions";
@@ -20,14 +20,6 @@ export const UserEdit = (props: EditProps): React.ReactElement => {
         <TextInput label="First Name" source="firstName" />
         <TextInput label="Last Name" source="lastName" />
         <PasswordInput label="Password" source="password" />
-        <SelectInput
-          source="role"
-          label="role"
-          choices={[{ label: "Option 1", value: "Option1" }]}
-          optionText="label"
-          allowEmpty
-          optionValue="value"
-        />
         <SelectArrayInput
           source="roles"
           choices={ROLES_OPTIONS}
@@ -35,6 +27,14 @@ export const UserEdit = (props: EditProps): React.ReactElement => {
           optionValue="value"
         />
         <TextInput label="Username" source="username" />
+        <SelectInput
+          source="userRoles"
+          label="userRoles"
+          choices={[{ label: "Option 1", value: "Option1" }]}
+          optionText="label"
+          allowEmpty
+          optionValue="value"
+        />
       </SimpleForm>
     </Edit>
   );

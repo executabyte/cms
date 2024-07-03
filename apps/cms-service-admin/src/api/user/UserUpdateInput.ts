@@ -5,7 +5,7 @@ export type UserUpdateInput = {
   firstName?: string | null;
   lastName?: string | null;
   password?: string;
-  role?: "Option1" | null;
   roles?: InputJsonValue;
   username?: string;
+  userRoles?: "Option1" | null;
 };

@@ -6,8 +6,8 @@ export type User = {
   firstName: string | null;
   id: string;
   lastName: string | null;
-  role?: "Option1" | null;
   roles: JsonValue;
   updatedAt: Date;
   username: string;
+  userRoles?: "Option1" | null;
 };
