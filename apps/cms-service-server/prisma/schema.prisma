@@ -27,16 +27,15 @@ model Record {
 }
 
 model User {
-  createdAt DateTime           @default(now())
-  email     String?            @unique
+  createdAt DateTime @default(now())
+  email     String?  @unique
   firstName String?
-  id        String             @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   lastName  String?
   password  String
   roles     Json
-  updatedAt DateTime           @updatedAt
-  username  String             @unique
-  userRoles EnumUserUserRoles?
+  updatedAt DateTime @updatedAt
+  username  String   @unique
 }
 
 model Image {
@@ -48,8 +47,4 @@ model Image {
   size      Int?
   updatedAt DateTime @updatedAt
   url       String?
-}
-
-enum EnumUserUserRoles {
-  Option1
 }

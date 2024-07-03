@@ -13,9 +13,8 @@ import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
-import { IsOptional, IsEnum } from "class-validator";
+import { IsOptional } from "class-validator";
 import { StringFilter } from "../../util/StringFilter";
-import { EnumUserUserRoles } from "./EnumUserUserRoles";
 
 @InputType()
 class UserWhereInput {
@@ -73,17 +72,6 @@ class UserWhereInput {
     nullable: true,
   })
   username?: StringFilter;
-
-  @ApiProperty({
-    required: false,
-    enum: EnumUserUserRoles,
-  })
-  @IsEnum(EnumUserUserRoles)
-  @IsOptional()
-  @Field(() => EnumUserUserRoles, {
-    nullable: true,
-  })
-  userRoles?: "Option1";
 }
 
 export { UserWhereInput as UserWhereInput };

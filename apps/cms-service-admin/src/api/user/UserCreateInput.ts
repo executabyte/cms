@@ -7,5 +7,4 @@ export type UserCreateInput = {
   password: string;
   roles: InputJsonValue;
   username: string;
-  userRoles?: "Option1" | null;
 };
