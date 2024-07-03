@@ -18,7 +18,6 @@ string password = 6;
 repeated string roles = 7;
 string updatedAt = 8;
 string username = 9;
-repeated string userRoles = 10;
 };
 message User {
 string createdAt = 1;
@@ -30,7 +29,6 @@ string password = 6;
 repeated string roles = 7;
 string updatedAt = 8;
 string username = 9;
-repeated string userRoles = 10;
 };
 message UserWhereUniqueInput {
 string createdAt = 1;
@@ -42,7 +40,6 @@ string password = 6;
 repeated string roles = 7;
 string updatedAt = 8;
 string username = 9;
-repeated string userRoles = 10;
 };
 message UserUpdateInput {
 string createdAt = 1;
@@ -54,7 +51,6 @@ string password = 6;
 repeated string roles = 7;
 string updatedAt = 8;
 string username = 9;
-repeated string userRoles = 10;
 };
 message findManyParams {
 

@@ -10,5 +10,4 @@ export type UserOrderByInput = {
   roles?: SortOrder;
   updatedAt?: SortOrder;
   username?: SortOrder;
-  userRoles?: SortOrder;
 };

@@ -42,7 +42,6 @@ export class UserGrpcControllerBase {
         roles: true,
         updatedAt: true,
         username: true,
-        userRoles: true,
       },
     });
   }
@@ -64,7 +63,6 @@ export class UserGrpcControllerBase {
         roles: true,
         updatedAt: true,
         username: true,
-        userRoles: true,
       },
     });
   }
@@ -87,7 +85,6 @@ export class UserGrpcControllerBase {
         roles: true,
         updatedAt: true,
         username: true,
-        userRoles: true,
       },
     });
     if (result === null) {
@@ -119,7 +116,6 @@ export class UserGrpcControllerBase {
           roles: true,
           updatedAt: true,
           username: true,
-          userRoles: true,
         },
       });
     } catch (error) {
@@ -151,7 +147,6 @@ export class UserGrpcControllerBase {
           roles: true,
           updatedAt: true,
           username: true,
-          userRoles: true,
         },
       });
     } catch (error) {

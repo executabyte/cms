@@ -9,5 +9,4 @@ export type User = {
   roles: JsonValue;
   updatedAt: Date;
   username: string;
-  userRoles?: "Option1" | null;
 };
